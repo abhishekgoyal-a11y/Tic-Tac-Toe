@@ -1,12 +1,16 @@
 from tkinter import *
+from tkinter import messagebox 
 clicked = True
+winner =False
 count = 0
 
+# Restart the game
 def restart_game():
     global b1,b2,b3,b4,b5,b6,b7,b8,b9,turn
-    global clicked,count
+    global clicked,count,winner
     clicked = True
     count = 0
+    winner=False
     
     turn= Label(screen,text="Turn - X",height=2, font=("Times", "9", "bold italic"))
     turn.grid(row=0,column=0,columnspan=3)
@@ -45,10 +49,11 @@ def disable_button():
     b8.config(state=DISABLED)
     b9.config(state=DISABLED)
 
+
 # CHECKING THE WINNER
 def check_winner():
     # CHECKING FOR X
-
+    global winner
     # CHECKING IN HORIZONTAL    
     if b1["text"]=="X" and b2["text"]=="X" and b3["text"]=="X":
         print(b1["text"],"is winner")
@@ -56,18 +61,24 @@ def check_winner():
         b2.config(bg='red')
         b3.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         X WINS         ")
     if b4["text"]=="X" and b5["text"]=="X" and b6["text"]=="X":
-        print(b1["text"],"is winner")
+        print(b4["text"],"is winner")
         b4.config(bg='red')
         b5.config(bg='red')
         b6.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         X WINS         ")
     if b7["text"]=="X" and b8["text"]=="X" and b9["text"]=="X":
-        print(b1["text"],"is winner")
+        print(b7["text"],"is winner")
         b7.config(bg='red')
         b8.config(bg='red')
         b9.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         X WINS         ")
 
     # CHECKING IN VERTICAL    
     if b1["text"]=="X" and b4["text"]=="X" and b7["text"]=="X":
@@ -76,18 +87,24 @@ def check_winner():
         b4.config(bg='red')
         b7.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         X WINS         ")
     if b2["text"]=="X" and b5["text"]=="X" and b8["text"]=="X":
-        print(b1["text"],"is winner")
+        print(b2["text"],"is winner")
         b2.config(bg='red')
         b5.config(bg='red')
         b8.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         X WINS         ")
     if b3["text"]=="X" and b6["text"]=="X" and b9["text"]=="X":
-        print(b1["text"],"is winner")
+        print(b3["text"],"is winner")
         b3.config(bg='red')
         b6.config(bg='red')
         b9.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         X WINS         ")
     
 
     # CHECKING IN DIAGONAL    
@@ -97,12 +114,16 @@ def check_winner():
         b5.config(bg='red')
         b9.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         X WINS         ")
     if b3["text"]=="X" and b5["text"]=="X" and b7["text"]=="X":
-        print(b1["text"],"is winner")
+        print(b3["text"],"is winner")
         b3.config(bg='red')
         b5.config(bg='red')
         b7.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         X WINS         ")
     
     # CHECKING FOR O
 
@@ -112,18 +133,24 @@ def check_winner():
         b2.config(bg='red')
         b3.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         O WINS         ")
     if b4["text"]=="O" and b5["text"]=="O" and b6["text"]=="O":
-        print(b1["text"],"is winner")
+        print(b4["text"],"is winner")
         b4.config(bg='red')
         b5.config(bg='red')
         b6.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         O WINS         ")
     if b7["text"]=="O" and b8["text"]=="O" and b9["text"]=="O":
-        print(b1["text"],"is winner")
+        print(b7["text"],"is winner")
         b7.config(bg='red')
         b8.config(bg='red')
         b9.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         O WINS         ")
 
     # CHECKING IN VERTICAL    
     if b1["text"]=="O" and b4["text"]=="O" and b7["text"]=="O":
@@ -132,18 +159,24 @@ def check_winner():
         b4.config(bg='red')
         b7.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         O WINS         ")
     if b2["text"]=="O" and b5["text"]=="O" and b8["text"]=="O":
-        print(b1["text"],"is winner")
+        print(b2["text"],"is winner")
         b2.config(bg='red')
         b5.config(bg='red')
         b8.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         O WINS         ")
     if b3["text"]=="O" and b6["text"]=="O" and b9["text"]=="O":
-        print(b1["text"],"is winner")
+        print(b3["text"],"is winner")
         b3.config(bg='red')
         b6.config(bg='red')
         b9.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         O WINS         ")
     
 
     # CHECKING IN DIAGONAL    
@@ -153,12 +186,22 @@ def check_winner():
         b5.config(bg='red')
         b9.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         O WINS         ")
     if b3["text"]=="O" and b5["text"]=="O" and b7["text"]=="O":
-        print(b1["text"],"is winner")
+        print(b3["text"],"is winner")
         b3.config(bg='red')
         b5.config(bg='red')
         b7.config(bg='red')
         disable_button()
+        winner=True
+        messagebox.showinfo("Results", "         O WINS         ")
+        
+# MATCH DRAW
+def draw():
+    if count>=9 and winner==False:
+        disable_button()
+        messagebox.showinfo("Result", "         MATCH DRAW         ")
         
 # CHECK WHEN BUTTON
 def b_click(value):
@@ -168,12 +211,14 @@ def b_click(value):
         clicked = False
         count+=1
         check_winner()
+        draw()
         turn["text"]="Turn - O"
     elif value["text"]==" " and clicked== False:
         value["text"]="O"
         clicked = True
         count+=1
         check_winner()
+        draw()
         turn["text"]="Turn - X"
         
 # SCREEN INITIALIZE
