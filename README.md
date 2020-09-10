@@ -3,3 +3,4 @@ A game in which two players seek in alternate turns to complete a row, a column,
 
 In first file, player to player can play and in second file, computer to player can play
 
+# This is how beginner people write code
